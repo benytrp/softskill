@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🤝 Soft Skills Curriculum Development Framework</title>
+<style>
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#f8f9fa;color:#212529;padding:1.5rem;line-height:1.6}
+.header{background:linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);color:white;padding:2rem;border-radius:12px;margin-bottom:2rem;text-align:center}
+h1{margin:0;font-size:2.2rem;font-weight:300}
+.subtitle{opacity:0.9;margin-top:0.5rem;font-size:1.1rem}
+h2{color:#495057;border-bottom:2px solid #dee2e6;padding-bottom:0.5rem;margin-bottom:1rem}
+h3{color:#6c757d;margin-bottom:0.8rem}
+label{display:block;margin:0.5rem 0 0.3rem 0;font-weight:600;color:#495057}
+input,textarea,select{width:100%;padding:0.75rem;background:#fff;border:2px solid #e9ecef;border-radius:8px;color:#495057;margin-bottom:1rem;font-family:inherit;transition:border-color 0.3s ease;box-sizing:border-box}
+input:focus,textarea:focus,select:focus{outline:none;border-color:#ff6b6b;box-shadow:0 0 0 3px rgba(255,107,107,0.1)}
+button{padding:0.75rem 1.5rem;border:0;border-radius:8px;cursor:pointer;margin:0.3rem;font-weight:600;transition:all 0.3s ease;font-family:inherit}
+.btn-primary{background:#ff6b6b;color:white}
+.btn-primary:hover{background:#ff5252;transform:translateY(-1px)}
+.btn-secondary{background:#6c757d;color:white}
+.btn-secondary:hover{background:#5a6268}
+.btn-success{background:#00d2d3;color:white}
+.btn-success:hover{background:#00b8b9}
+.btn-danger{background:#dc3545;color:white}
+.btn-danger:hover{background:#c82333}
+.preset-buttons{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2rem}
+.main{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2rem}
+.card{background:white;padding:1.5rem;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.1);border:1px solid #e9ecef}
+.layer{border:2px solid #e9ecef;padding:1rem;border-radius:10px;margin:0.8rem 0;background:#fff5f5;position:relative}
+.layer-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.layer-title{font-weight:700;color:#495057}
+.remove-btn{background:#dc3545;color:white;border:none;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+pre{background:#2d3748;color:#e2e8f0;padding:1.5rem;border-radius:8px;white-space:pre-wrap;max-height:60vh;overflow:auto;font-family:'Fira Code',monospace}
+.output-section{margin-top:2rem}
+.generate-btn{background:linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);color:white;font-size:1.1rem;padding:1rem 2rem;border-radius:10px;border:none;cursor:pointer;transition:transform 0.3s ease;width:100%}
+.generate-btn:hover{transform:translateY(-2px)}
+@media(max-width:900px){.main{grid-template-columns:1fr}.preset-buttons{justify-content:center}}
+.info-badge{background:#ffe8e8;color:#d63031;padding:0.3rem 0.8rem;border-radius:20px;font-size:0.85rem;display:inline-block;margin:0.2rem}
+.output-tabs{display:flex;margin-bottom:1rem}
+.tab-btn{background:#6c757d;color:white;border:none;padding:0.5rem 1rem;cursor:pointer;margin-right:0.25rem;border-radius:8px 8px 0 0}
+.tab-btn.active{background:#ff6b6b}
+.output-content{display:none}
+.output-content.active{display:block}
+.soft-skills-badge{background:linear-gradient(135deg, #ff6b6b, #ee5a24);color:white;padding:0.2rem 0.6rem;border-radius:15px;font-size:0.8rem;margin:0.1rem}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🤝 Soft Skills Curriculum Framework</h1>
+  <div class="subtitle">Design experiential learning programs for interpersonal & professional competencies</div>
+</div>
+
+<!-- PRESET BUTTONS -->
+<div class="preset-buttons" id="presetButtons"></div>
+
+<!-- MAIN FORM -->
+<div class="main">
+  <div class="card">
+    <h2>🎯 Curriculum Configuration</h2>
+    
+    <label>🏷️ Program ID</label>
+    <input id="taskId" placeholder="e.g., LEADERSHIP_DEVELOPMENT_PROGRAM">
+    
+    <label>🎓 Learning Approach</label>
+    <select id="executionMode">
+      <option>EXPERIENTIAL_LEARNING</option>
+      <option>SOCIAL_COLLABORATIVE</option>
+      <option>REFLECTIVE_PRACTICE</option>
+      <option>SCENARIO_BASED</option>
+      <option>PEER_TO_PEER_COACHING</option>
+      <option>MENTORSHIP_GUIDED</option>
+    </select>
+    
+    <label>🎯 Learning Outcomes</label>
+    <textarea id="invocation" rows="3" placeholder="Define the specific soft skills competencies learners will develop..."></textarea>
+    
+    <label>🌟 Development Journey</label>
+    <input id="glyphSignature" value="👥 → 💭 → 🎭 → 💬 → 🔄 → 🌟">
+    
+    <label>📈 Assessment Strategy</label>
+    <textarea id="completionProtocol" rows="2" placeholder="How will soft skills development be observed, measured, and validated..."></textarea>
+    
+    <label>🎚️ Competency Level</label>
+    <select id="recursionDepth">
+      <option>AWARENESS_BUILDING</option>
+      <option>SKILL_FOUNDATION</option>
+      <option>PRACTICAL_APPLICATION</option>
+      <option>BEHAVIORAL_INTEGRATION</option>
+      <option>MASTERY_DEMONSTRATION</option>
+    </select>
+  </div>
+
+  <div class="card">
+    <h2>🧩 Development Layers</h2>
+    <div class="info-badge">💡 Each layer addresses key tensions in soft skills development</div>
+    
+    <div id="layerBox"></div>
+    
+    <div style="margin:1rem 0">
+      <select id="layerPresetSelect">
+        <option value="">— Select Development Layer —</option>
+      </select>
+      <button class="btn-primary" onclick="insertLayerPreset()">➕ Add Layer</button>
+      <button class="btn-secondary" onclick="addLayer()">📄 Blank Layer</button>
+      <button class="btn-danger" onclick="clearLayers()">🗑️ Clear All</button>
+    </div>
+  </div>
+</div>
+
+<div class="output-section">
+  <button class="generate-btn" onclick="generateTemplate()">🚀 Generate Soft Skills Curriculum</button>
+  
+  <div class="output-tabs" id="outputTabs" style="display:none;">
+    <button class="tab-btn active" onclick="showTab('json')">📋 JSON Structure</button>
+    <button class="tab-btn" onclick="showTab('markdown')">📝 Program Guide</button>
+    <button class="tab-btn" onclick="showTab('prompt')">🤖 AI Prompt</button>
+    <button class="tab-btn" onclick="showTab('lesson')">📖 Sample Lesson</button>
+  </div>
+  
+  <div id="jsonOutput" class="output-content active">
+    <pre id="jsonOut"></pre>
+  </div>
+  
+  <div id="markdownOutput" class="output-content">
+    <pre id="mdOut"></pre>
+  </div>
+  
+  <div id="promptOutput" class="output-content">
+    <pre id="promptOut"></pre>
+  </div>
+  
+  <div id="lessonOutput" class="output-content">
+    <pre id="lessonOut"></pre>
+  </div>
+</div>
+
+<script>
+// SOFT SKILLS CURRICULUM PRESETS
+const presets = {
+  leadership: {
+    taskId: "LEADERSHIP_DEVELOPMENT_PROGRAM",
+    executionMode: "EXPERIENTIAL_LEARNING",
+    invocation: "Develop authentic leadership capabilities through self-awareness, team dynamics, and decision-making experiences",
+    glyph: "👤 → 👥 → 🎯 → 💪 → 🌟",
+    completion: "Demonstrate leadership competencies through capstone project and 360-degree feedback assessment",
+    depth: "BEHAVIORAL_INTEGRATION",
+    layers: ["self_awareness", "emotional_intelligence", "team_dynamics", "decision_making", "influence", "feedback"]
+  },
+  
+  communication: {
+    taskId: "COMMUNICATION_MASTERY_PROGRAM", 
+    executionMode: "SCENARIO_BASED",
+    invocation: "Master interpersonal communication through listening, speaking, writing, and nonverbal awareness",
+    glyph: "👂 → 💭 → 💬 → 📝 → 🎭",
+    completion: "Excel in diverse communication scenarios with measurable improvement in clarity and impact",
+    depth: "PRACTICAL_APPLICATION",
+    layers: ["active_listening", "verbal_skills", "written_communication", "nonverbal_awareness", "difficult_conversations", "presentation"]
+  },
+  
+  emotional_intelligence: {
+    taskId: "EMOTIONAL_INTELLIGENCE_DEVELOPMENT",
+    executionMode: "REFLECTIVE_PRACTICE", 
+    invocation: "Build emotional self-awareness, regulation, and social skills for professional effectiveness",
+    glyph: "💭 → 😊 → 🤝 → 💪 → 🌟",
+    completion: "Apply EQ skills consistently in workplace situations with improved relationship outcomes",
+    depth: "BEHAVIORAL_INTEGRATION",
+    layers: ["self_awareness", "self_regulation", "motivation", "empathy", "social_skills", "application"]
+  },
+  
+  teamwork: {
+    taskId: "COLLABORATIVE_TEAMWORK_PROGRAM",
+    executionMode: "SOCIAL_COLLABORATIVE",
+    invocation: "Excel in team environments through collaboration, conflict resolution, and shared accountability",
+    glyph: "👥 → 🤝 → ⚡ → 🔄 → 🏆",
+    completion: "Lead and contribute to high-performing teams with demonstrated collaborative impact",
+    depth: "MASTERY_DEMONSTRATION", 
+    layers: ["team_formation", "collaboration", "conflict_resolution", "accountability", "diversity", "performance"]
+  },
+  
+  problem_solving: {
+    taskId: "CREATIVE_PROBLEM_SOLVING_PROGRAM",
+    executionMode: "SCENARIO_BASED",
+    invocation: "Develop systematic approach to complex problem-solving with creative and analytical thinking",
+    glyph: "🧩 → 💡 → 🔍 → ⚗️ → ✅",
+    completion: "Solve complex, ambiguous problems using structured methodologies and innovative approaches",
+    depth: "PRACTICAL_APPLICATION",
+    layers: ["problem_identification", "creative_thinking", "analytical_skills", "solution_design", "implementation", "evaluation"]
+  },
+  
+  adaptability: {
+    taskId: "ADAPTABILITY_RESILIENCE_PROGRAM",
+    executionMode: "EXPERIENTIAL_LEARNING",
+    invocation: "Build resilience and adaptability for thriving in dynamic, uncertain environments",
+    glyph: "🌊 → 🧘 → 🔄 → 💪 → 🚀",
+    completion: "Navigate change effectively with demonstrated resilience and growth mindset behaviors",
+    depth: "BEHAVIORAL_INTEGRATION",
+    layers: ["change_mindset", "stress_management", "flexibility", "learning_agility", "resilience", "growth"]
+  }
+};
+
+// SOFT SKILLS LAYER PRESETS  
+const layerPresets = {
+  self_awareness: {
+    name: "SELF_AWARENESS",
+    contr: "Self-Reflection vs. External Feedback",
+    prompt: "How do we balance internal introspection with external perspective for accurate self-knowledge?",
+    auto: "Conduct 360-degree assessment with reflective journaling and feedback integration"
+  },
+  
+  emotional_intelligence: {
+    name: "EMOTIONAL_INTELLIGENCE",
+    contr: "Emotional Authenticity vs. Professional Appropriateness", 
+    prompt: "How do we honor genuine emotions while maintaining workplace professionalism?",
+    auto: "Practice emotional awareness exercises with workplace scenario applications"
+  },
+  
+  team_dynamics: {
+    name: "TEAM_DYNAMICS",
+    contr: "Individual Contribution vs. Collective Success",
+    prompt: "How do we balance personal achievement with team goals and shared success?",
+    auto: "Engage in collaborative projects with role rotation and team effectiveness measurement"
+  },
+  
+  decision_making: {
+    name: "DECISION_MAKING", 
+    contr: "Data-Driven vs. Intuitive Judgment",
+    prompt: "How do we integrate analytical thinking with intuitive wisdom for effective decisions?",
+    auto: "Practice decision-making scenarios using structured frameworks and reflection"
+  },
+  
+  influence: {
+    name: "INFLUENCE_PERSUASION",
+    contr: "Authentic Influence vs. Manipulative Tactics",
+    prompt: "How do we influence ethically while achieving necessary outcomes?",
+    auto: "Develop influence skills through ethical persuasion techniques and practice scenarios"
+  },
+  
+  feedback: {
+    name: "FEEDBACK_CULTURE",
+    contr: "Honest Communication vs. Relationship Preservation",
+    prompt: "How do we give and receive honest feedback while maintaining positive relationships?",
+    auto: "Practice giving and receiving feedback using structured models and peer coaching"
+  },
+  
+  active_listening: {
+    name: "ACTIVE_LISTENING",
+    contr: "Deep Understanding vs. Response Preparation",
+    prompt: "How do we truly listen to understand rather than listening to reply?",
+    auto: "Develop listening skills through structured exercises and reflection on listening barriers"
+  },
+  
+  verbal_skills: {
+    name: "VERBAL_COMMUNICATION",
+    contr: "Clarity vs. Diplomacy", 
+    prompt: "How do we communicate clearly and directly while remaining tactful and considerate?",
+    auto: "Practice verbal communication in various contexts with feedback on clarity and impact"
+  },
+  
+  written_communication: {
+    name: "WRITTEN_COMMUNICATION",
+    contr: "Efficiency vs. Relationship Building",
+    prompt: "How do we write efficiently while maintaining personal connection and engagement?",
+    auto: "Develop writing skills across formats with emphasis on audience awareness and purpose"
+  },
+  
+  nonverbal_awareness: {
+    name: "NONVERBAL_COMMUNICATION",
+    contr: "Authenticity vs. Strategic Presentation",
+    prompt: "How do we align our nonverbal communication with our authentic message and professional goals?",
+    auto: "Increase nonverbal awareness through video analysis and behavioral feedback"
+  },
+  
+  difficult_conversations: {
+    name: "DIFFICULT_CONVERSATIONS",
+    contr: "Direct Communication vs. Relationship Preservation",
+    prompt: "How do we address challenging topics directly while preserving important relationships?",
+    auto: "Practice difficult conversation skills using structured approaches and role-playing"
+  },
+  
+  presentation: {
+    name: "PRESENTATION_SKILLS",
+    contr: "Content Delivery vs. Audience Engagement",
+    prompt: "How do we balance comprehensive content with engaging, interactive presentation?",
+    auto: "Develop presentation skills through progressive practice with peer and video feedback"
+  },
+  
+  self_regulation: {
+    name: "EMOTIONAL_REGULATION",
+    contr: "Emotional Expression vs. Professional Control",
+    prompt: "How do we manage intense emotions while remaining authentic and professional?", 
+    auto: "Learn emotional regulation techniques through mindfulness practice and scenario application"
+  },
+  
+  motivation: {
+    name: "INTRINSIC_MOTIVATION",
+    contr: "Personal Goals vs. Organizational Needs",
+    prompt: "How do we align personal motivation with organizational objectives for sustainable engagement?",
+    auto: "Explore motivation patterns and develop strategies for sustained professional engagement"
+  },
+  
+  empathy: {
+    name: "EMPATHY_PERSPECTIVE",
+    contr: "Emotional Connection vs. Professional Boundaries",
+    prompt: "How do we demonstrate empathy and understanding while maintaining appropriate boundaries?",
+    auto: "Develop perspective-taking skills through diverse scenario practice and reflection"
+  },
+  
+  social_skills: {
+    name: "SOCIAL_PROFESSIONAL_SKILLS",
+    contr: "Authentic Relationships vs. Strategic Networking",
+    prompt: "How do we build genuine professional relationships that serve both personal and business purposes?",
+    auto: "Practice social skills in professional contexts with focus on mutual benefit and authenticity"
+  },
+  
+  application: {
+    name: "WORKPLACE_APPLICATION",
+    contr: "Skill Practice vs. Real-World Implementation", 
+    prompt: "How do we bridge the gap between learning skills and applying them effectively in real situations?",
+    auto: "Create action plans for workplace application with accountability partnerships and progress tracking"
+  },
+  
+  team_formation: {
+    name: "TEAM_FORMATION",
+    contr: "Efficiency vs. Relationship Building",
+    prompt: "How do we form teams quickly while ensuring strong interpersonal connections?",
+    auto: "Experience team formation processes with reflection on dynamics and effectiveness patterns"
+  },
+  
+  collaboration: {
+    name: "COLLABORATIVE_PROCESSES", 
+    contr: "Individual Expertise vs. Collective Wisdom",
+    prompt: "How do we leverage individual strengths while creating genuine collaborative outcomes?",
+    auto: "Engage in collaborative projects with structured reflection on process and outcomes"
+  },
+  
+  conflict_resolution: {
+    name: "CONFLICT_RESOLUTION",
+    contr: "Harmony vs. Productive Tension",
+    prompt: "How do we address conflicts constructively while maintaining team cohesion?",
+    auto: "Learn and practice conflict resolution skills through mediated scenarios and peer coaching"
+  },
+  
+  accountability: {
+    name: "SHARED_ACCOUNTABILITY",
+    contr: "Individual Responsibility vs. Team Support",
+    prompt: "How do we balance personal accountability with collective responsibility for team outcomes?",
+    auto: "Develop accountability practices through team projects with peer feedback systems"
+  },
+  
+  diversity: {
+    name: "DIVERSITY_INCLUSION",
+    contr: "Comfort vs. Growth Challenge",
+    prompt: "How do we embrace diversity as a growth opportunity while managing discomfort and bias?", 
+    auto: "Engage with diverse perspectives through structured dialogue and bias awareness exercises"
+  },
+  
+  performance: {
+    name: "TEAM_PERFORMANCE",
+    contr: "Process vs. Results Focus",
+    prompt: "How do we balance attention to team process with achievement of concrete results?",
+    auto: "Measure and optimize team performance through both process metrics and outcome assessment"
+  },
+  
+  problem_identification: {
+    name: "PROBLEM_IDENTIFICATION",
+    contr: "Symptom vs. Root Cause Focus",
+    prompt: "How do we distinguish between surface symptoms and underlying root causes of problems?",
+    auto: "Practice problem analysis techniques through case studies and real-world applications"
+  },
+  
+  creative_thinking: {
+    name: "CREATIVE_THINKING",
+    contr: "Innovation vs. Practicality",
+    prompt: "How do we generate innovative solutions while ensuring practical feasibility?",
+    auto: "Develop creative thinking skills through structured brainstorming and ideation exercises"
+  },
+  
+  analytical_skills: {
+    name: "ANALYTICAL_THINKING",
+    contr: "Thorough Analysis vs. Timely Action",
+    prompt: "How do we balance comprehensive analysis with the need for timely decision-making?",
+    auto: "Practice analytical frameworks through case studies with time-constrained decision scenarios"
+  },
+  
+  solution_design: {
+    name: "SOLUTION_DESIGN",
+    contr: "Comprehensive vs. Simple Solutions",
+    prompt: "How do we design solutions that are thorough yet simple enough to implement effectively?",
+    auto: "Design solutions for complex problems with focus on stakeholder needs and implementation feasibility"
+  },
+  
+  implementation: {
+    name: "SOLUTION_IMPLEMENTATION",
+    contr: "Planning vs. Adaptive Execution",
+    prompt: "How do we balance detailed planning with flexibility to adapt during implementation?",
+    auto: "Practice implementation planning with simulation of real-world obstacles and adaptations"
+  },
+  
+  evaluation: {
+    name: "SOLUTION_EVALUATION",
+    contr: "Quantitative vs. Qualitative Assessment",
+    prompt: "How do we evaluate solution success using both measurable metrics and qualitative outcomes?",
+    auto: "Develop evaluation frameworks that capture both tangible results and stakeholder satisfaction"
+  },
+  
+  change_mindset: {
+    name: "CHANGE_MINDSET",
+    contr: "Stability vs. Continuous Change",
+    prompt: "How do we balance the human need for stability with the professional requirement for continuous adaptation?",
+    auto: "Develop change readiness through mindset exercises and incremental challenge experiences"
+  },
+  
+  stress_management: {
+    name: "STRESS_RESILIENCE",
+    contr: "Stress Avoidance vs. Stress Management",
+    prompt: "How do we build resilience to handle stress rather than simply trying to avoid it?",
+    auto: "Learn stress management techniques through progressive exposure and coping strategy practice"
+  },
+  
+  flexibility: {
+    name: "COGNITIVE_FLEXIBILITY",
+    contr: "Consistency vs. Adaptability",
+    prompt: "How do we maintain core values and principles while adapting our approaches and methods?",
+    auto: "Practice flexibility through scenario-based exercises and perspective-shifting activities"
+  },
+  
+  learning_agility: {
+    name: "LEARNING_AGILITY",
+    contr: "Deep Expertise vs. Broad Adaptability",
+    prompt: "How do we balance developing deep expertise with maintaining the ability to learn new domains quickly?",
+    auto: "Develop learning agility through rapid skill acquisition challenges and reflection on learning processes"
+  },
+  
+  resilience: {
+    name: "PERSONAL_RESILIENCE",
+    contr: "Vulnerability vs. Strength",
+    prompt: "How do we build genuine resilience that includes acknowledging vulnerability rather than ignoring it?",
+    auto: "Build resilience through graduated challenges with support systems and recovery practice"
+  },
+  
+  growth: {
+    name: "GROWTH_MINDSET",
+    contr: "Self-Acceptance vs. Continuous Improvement",
+    prompt: "How do we balance self-acceptance with commitment to continuous growth and development?", 
+    auto: "Cultivate growth mindset through challenge-based learning and failure analysis exercises"
+  }
+};
+
+// UI INITIALIZATION
+const presetButtons = document.getElementById('presetButtons');
+Object.entries(presets).forEach(([k, v]) => {
+  const b = document.createElement('button');
+  b.className = 'btn-primary';
+  b.textContent = `🤝 ${k.charAt(0).toUpperCase() + k.slice(1).replace('_', ' ')} Program`;
+  b.onclick = () => loadPreset(k);
+  presetButtons.appendChild(b);
+});
+
+const lpSelect = document.getElementById('layerPresetSelect');
+Object.entries(layerPresets).forEach(([k, v]) => {
+  const o = document.createElement('option');
+  o.value = k;
+  o.textContent = `${v.name.replace(/_/g, ' ')}`;
+  lpSelect.appendChild(o);
+});
+
+// LAYER MANAGEMENT
+let layerCount = 0;
+
+function addLayer(d = {}) {
+  layerCount++;
+  const div = document.createElement('div');
+  div.className = 'layer';
+  div.innerHTML = `
+    <div class="layer-header">
+      <span class="layer-title">🧩 Development Layer ${layerCount}</span>
+      <button class="remove-btn" onclick="this.parentNode.parentNode.remove()">✕</button>
+    </div>
+    
+    <label>Competency Area</label>
+    <input value="${d.name || ''}" class="l-name" placeholder="e.g., EMOTIONAL_REGULATION">
+    
+    <label>Development Tension</label>
+    <input value="${d.contr || ''}" class="l-contr" placeholder="e.g., Authenticity vs. Professionalism">
+    
+    <label>Core Challenge</label>
+    <textarea rows="2" class="l-prompt" placeholder="What key challenge will learners work through?">${d.prompt || ''}</textarea>
+    
+    <label>Learning Activity</label>
+    <input value="${d.auto || ''}" class="l-auto" placeholder="Specific experiential learning approach">
+  `;
+  document.getElementById('layerBox').appendChild(div);
+}
+
+function insertLayerPreset() {
+  const key = lpSelect.value;
+  if (!key) return;
+  addLayer({...layerPresets[key]});
+  lpSelect.value = '';
+}
+
+function clearLayers() {
+  document.getElementById('layerBox').innerHTML = '';
+  layerCount = 0;
+}
+
+function loadPreset(key) {
+  const p = presets[key];
+  document.getElementById('taskId').value = p.taskId;
+  document.getElementById('executionMode').value = p.executionMode;
+  document.getElementById('invocation').value = p.invocation;
+  document.getElementById('glyphSignature').value = p.glyph;
+  document.getElementById('completionProtocol').value = p.completion;
+  document.getElementById('recursionDepth').value = p.depth;
+  
+  clearLayers();
+  p.layers.forEach(k => addLayer({...layerPresets[k]}));
+}
+
+function showTab(tabName) {
+  // Hide all content
+  document.querySelectorAll('.output-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  
+  // Show selected content
+  document.getElementById(tabName + 'Output').classList.add('active');
+  event.target.classList.add('active');
+}
+
+function generateTemplate() {
+  const layers = [...document.querySelectorAll('#layerBox .layer')].map(el => ({
+    competency_area: el.querySelector('.l-name').value.trim(),
+    development_tension: el.querySelector('.l-contr').value.trim(),
+    core_challenge: el.querySelector('.l-prompt').value.trim(),
+    learning_activity: el.querySelector('.l-auto').value.trim()
+  }));
+
+  const template = {
+    program_id: document.getElementById('taskId').value.trim(),
+    learning_approach: document.getElementById('executionMode').value,
+    development_journey: document.getElementById('glyphSignature').value.trim(),
+    learning_outcomes: document.getElementById('invocation').value.trim(),
+    competency_layers: layers,
+    assessment_strategy: document.getElementById('completionProtocol').value.trim(),
+    competency_level: document.getElementById('recursionDepth').value.trim(),
+    created: new Date().toISOString(),
+    program_type: "soft_skills_development"
+  };
+
+  const md = `# 🤝 ${template.program_id.replace(/_/g, ' ')}
+
+**Learning Approach:** ${template.learning_approach}  
+**Learning Outcomes:** ${template.learning_outcomes}  
+**Development Journey:** ${template.development_journey}  
+**Assessment Strategy:** ${template.assessment_strategy}  
+**Competency Level:** ${template.competency_level}
+
+## Development Layers
+
+${layers.map((l, i) => `### Layer ${i + 1}: ${l.competency_area.replace(/_/g, ' ')}
+- **Development Tension:** ${l.development_tension}
+- **Core Challenge:** ${l.core_challenge}
+- **Learning Activity:** ${l.learning_activity}`).join('\n\n')}
+
+## Implementation Notes
+- Use experiential learning methods
+- Incorporate peer feedback and reflection
+- Provide safe practice environments
+- Measure behavioral change over time
+- Support transfer to real-world contexts
+
+---
+*Generated: ${new Date().toLocaleDateString()}*`;
+
+  const aiPrompt = `# Soft Skills Development Program: ${template.program_id}
+
+You are an expert in soft skills development and experiential learning, operating in **${template.learning_approach}** mode.
+
+## Program Outcomes
+${template.learning_outcomes}
+
+## Development Journey
+${template.development_journey}
+
+## Competency Development Layers
+${layers.map((l, i) => `
+**Layer ${i + 1}: ${l.competency_area}**
+- Development Tension: ${l.development_tension}
+- Core Challenge: ${l.core_challenge}
+- Learning Activity: ${l.learning_activity}
+`).join('')}
+
+## Assessment & Validation
+${template.assessment_strategy}
+
+## Development Instructions
+- **Competency Level Target:** ${template.competency_level}
+- Create psychologically safe learning environment
+- Use experiential and scenario-based methods
+- Incorporate peer learning and feedback
+- Focus on behavioral application and transfer
+- Address each development tension thoughtfully
+- Provide structured reflection opportunities
+- Measure progress through observable behaviors
+
+Design a comprehensive soft skills development program that balances skill building with real-world application, ensuring learners can demonstrate competency in authentic professional contexts.`;
+
+  const sampleLesson = `# Sample Lesson: ${layers[0]?.competency_area.replace(/_/g, ' ') || 'Soft Skills Development'}
+
+## Learning Objective
+Develop ${layers[0]?.competency_area.replace(/_/g, ' ').toLowerCase() || 'core competency'} through experiential practice and reflection.
+
+## Development Tension
+**${layers[0]?.development_tension || 'Balance competing priorities'}**
+
+## Lesson Structure (90 minutes)
+
+### Opening Circle (10 min)
+- Check-in: Share one recent experience related to this competency
+- Set learning intentions for the session
+
+### Core Challenge Introduction (15 min)
+**Challenge:** ${layers[0]?.core_challenge || 'How do we apply this skill in complex situations?'}
+- Present scenario for exploration
+- Initial reactions and assumptions
+
+### Experiential Activity (40 min)
+**${layers[0]?.learning_activity || 'Practice scenario with peer feedback'}**
+- Small group practice (20 min)
+- Peer observation and feedback (15 min)
+- Large group insights sharing (5 min)
+
+### Reflection & Integration (20 min)
+- Individual reflection journaling
+- Partner sharing of key insights
+- Connection to workplace applications
+
+### Action Planning (5 min)
+- Commit to one specific practice for the coming week
+- Identify accountability partner
+
+## Assessment Evidence
+- Quality of participation in experiential activities
+- Depth of reflection and self-awareness demonstrated
+- Specific examples of planned application
+- Peer feedback on skill demonstration
+
+## Materials Needed
+- Scenario cards/descriptions
+- Reflection worksheets
+- Peer feedback forms
+- Action planning templates
+
+## Follow-up
+- Week 2: Check-in on action plan progress
+- Ongoing: Peer coaching partnerships
+- Month 1: Progress assessment and adjustment`;
+
+  document.getElementById('jsonOut').textContent = JSON.stringify(template, null, 2);
+  document.getElementById('mdOut').textContent = md;
+  document.getElementById('promptOut').textContent = aiPrompt;
+  document.getElementById('lessonOut').textContent = sampleLesson;
+  
+  document.getElementById('outputTabs').style.display = 'flex';
+}
+</script>
+
+</body>
+</html>
